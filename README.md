@@ -9,3 +9,5 @@ AutomataWorks
 4-)[CW5](https://sfrcnayds.github.io/AutomataWorks/CW5/Expression.html)
 
 5-)[HW2](https://sfrcnayds.github.io/AutomataWorks/HW2/Expression.html)
+
+6-)[HW3](https://sfrcnayds.github.io/AutomataWorks/HW3/microJ1.html)

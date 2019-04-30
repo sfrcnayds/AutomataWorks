@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Deterministic Finite Automaton</title>
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <div class="table">
+          <div class="leftinfo">
+            <h1>Deterministic Finite Automaton <span>by Sefercan Aydaş</span></h1>
+          </div>
+          <div class="rightinfo">
+
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="headmenu">
+      <div class="container">
+        <ul>
+          <li><a href="#" id = "anasayfa">Anasayfa</a></li>
+        </ul>
+      </div>
+    </section>
+      <div class="container">
+        <div class="homepage" id = "divHomePage">
+          <p>What is Deterministic Finite Automaton</p>
+          <ul>
+            <li>In DFA, for each input symbol, one can determine the state to which the machine will move. Hence, it is called Deterministic Automaton. As it has a finite number of states, the machine is called Deterministic Finite Machine or Deterministic Finite Automaton.</li>
+          </ul>
+          <p>Formal Definition of a DFA</p>
+          <ul>
+            <li>A DFA can be represented by a 5-tuple (Q, ∑, δ, q0, F) where −</li>
+            <ul>
+              <li>Q is a finite set of states.</li>
+              <li>∑ is a finite set of symbols called the alphabet.</li>
+              <li>δ is the transition function where δ: Q × ∑ → Q</li>
+              <li>q0 is the initial state from where any input is processed (q0 ∈ Q).</li>
+              <li>F is a set of final state/states of Q (F ⊆ Q).</li>
+            </ul>
+          </ul>
+          <p>Example Of DFA</p>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Present State</th>
+                <th scope="col">Next State for Input 0</th>
+                <th scope="col">Next State for Input 1</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>a</td>
+                <td>a</td>
+                <td>b</td>
+              </tr>
+              <tr>
+                <td>b</td>
+                <td>c</td>
+                <td>a</td>
+              </tr>
+              <tr>
+                <td>c</td>
+                <td>b</td>
+                <td>c</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Graphical Representation</p>
+          <img src="dfaImage.jpg" class="img-fluid" alt="Responsive image">
+        </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="copyright">
+          &copy; Powered by Sefercan Aydaş - 2018 Sefercan Aydaş All Rights Reserved
+        </div>
+      </div>
+    </footer>
+
+    <div class="container">
+      <div class="reference">
+        <h2 style="margin-top: 0">Referans:</h2>
+        <span>Deterministic Finite Automaton: <a href="https://www.tutorialspoint.com/automata_theory/deterministic_finite_automaton.htm" target="_blank">https://www.tutorialspoint.com/automata_theory/deterministic_finite_automaton.htm</a> </span>
+      </div>
+    </div>
+  </body>
+</html>

@@ -2,94 +2,190 @@
 <html lang="tr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title>Deterministic Finite Automaton</title>
     <link rel="stylesheet" href="main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="dfa.js" charset="utf-8"></script>
   </head>
-
   <body>
-
     <header>
-      <div class="container">
-        <div class="table">
-          <div class="leftinfo">
-            <h1>Deterministic Finite Automaton <span>by Sefercan Aydaş</span></h1>
-          </div>
-          <div class="rightinfo">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
 
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#formaldefination">Formal Definition of a DFA</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#exaampleofdfa">Example Of DFA</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#graphicalrepresentation">Graphical Representation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#dfaanimation">DFA Animation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#stepstates">Step States</a>
+                </li>
+              </ul>
+            </div>
+
+
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-fluid">
+      <div id="home" style="padding-top: 134px">
+        <div class="welcometext text-center">
+          <h1>Deterministic Finite Automata</h1>
+          <p>Sefercan AYDAŞ</p>
+        </div>
+        <h2>What is Deterministic Finite Automata</h2>
+        <blockquote>
+          In DFA, for each input symbol, one can determine the state to which the machine will move. Hence, it is called Deterministic Automaton. As it has a finite number of states, the machine is called Deterministic Finite Machine or Deterministic Finite Automaton.
+        </blockquote>
+      </div>
+
+      <div id="formaldefination" style="padding-top: 34px">
+        <h2>Formal Definition of a DFA</h2>
+        <blockquote>
+          <li>A DFA can be represented by a 5-tuple (Q, ∑, δ, q0, F) where −</li>
+          <ul>
+            <li>Q is a finite set of states.</li>
+            <li>∑ is a finite set of symbols called the alphabet.</li>
+            <li>δ is the transition function where δ: Q × ∑ → Q</li>
+            <li>q0 is the initial state from where any input is processed (q0 ∈ Q).</li>
+            <li>F is a set of final state/states of Q (F ⊆ Q).</li>
+          </ul>
+        </blockquote>
+      </div>
+
+      <div id="exaampleofdfa" style="padding-top: 34px">
+        <h2>Example Of DFA</h2>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Present State</th>
+              <th scope="col">Next State for Input 0</th>
+              <th scope="col">Next State for Input 1</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>a</td>
+              <td>a</td>
+              <td>b</td>
+            </tr>
+            <tr>
+              <td>b</td>
+              <td>c</td>
+              <td>a</td>
+            </tr>
+            <tr>
+              <td>c</td>
+              <td>b</td>
+              <td>c</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="graphicalrepresentation" style="padding-top: 34px">
+        <h2>Graphical Representation</h2>
+        <div class="image svgbg">
+          <img id="dfaImage" src="dfaImage.jpg" class="img-fluid" alt="Responsive image">
+        </div>
+      </div>
+
+      <div id="dfaanimation" style="padding-top: 34px">
+        <h2>DFA Animation</h2>
+        <div class="image svgbg">
+          <svg width="500" height="450" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <ellipse id="stateA" stroke="black" stroke-width="2" fill="none" cx="115.5" cy="239.5" rx="30" ry="30"/>
+            <text x="111.5" y="245.5" font-family="Times New Roman" font-size="20">a</text>
+            <ellipse id="stateB" stroke="black" stroke-width="2" fill="none" cx="260.5" cy="239.5" rx="30" ry="30"/>
+            <text x="255.5" y="245.5" font-family="Times New Roman" font-size="20">b</text>
+            <ellipse id="stateC" stroke="black" stroke-width="2" fill="none" cx="411.5" cy="239.5" rx="30" ry="30"/>
+            <text x="407.5" y="245.5" font-family="Times New Roman" font-size="20">c</text>
+            <ellipse stroke="black" stroke-width="1" fill="none" cx="411.5" cy="239.5" rx="24" ry="24"/>
+            <polygon id="AtoB" stroke="black" stroke-width="1" points="145.5,239.5 230.5,239.5"/>
+            <polygon id="AtoBArrow" fill="black" stroke-width="1" points="230.5,239.5 222.5,234.5 222.5,244.5"/>
+            <text x="183.5" y="230.5" font-family="Times New Roman" font-size="20">1</text>
+            <path id="AtoA" stroke="black" stroke-width="1" fill="none" d="M 128.725,266.297 A 22.5,22.5 0 1 1 102.275,266.297"/>
+            <text x="110.5" y="328.5" font-family="Times New Roman" font-size="20">0</text>
+            <polygon id="AtoAArrow" fill="black" stroke-width="1" points="102.275,266.297 93.527,269.83 101.618,275.708"/>
+            <polygon stroke="black" stroke-width="1" points="52.5,239.5 85.5,239.5"/>
+            <polygon fill="black" stroke-width="1" points="85.5,239.5 77.5,234.5 77.5,244.5"/>
+            <path id="BtoA" stroke="black" stroke-width="1" fill="none" d="M 127.273,212.129 A 74.029,74.029 0 0 1 248.727,212.129"/>
+            <polygon id="BtoAArrow" fill="black" stroke-width="1" points="127.273,212.129 135.95,208.426 127.747,202.707"/>
+            <text x="183.5" y="171.5" font-family="Times New Roman" font-size="20">1</text>
+            <polygon id="BtoC" stroke="black" stroke-width="1" points="290.5,239.5 381.5,239.5"/>
+            <polygon id="BtoCArrow" fill="black" stroke-width="1" points="381.5,239.5 373.5,234.5 373.5,244.5"/>
+            <text x="331.5" y="230.5" font-family="Times New Roman" font-size="20">0</text>
+            <path id="CtoC" stroke="black" stroke-width="1" fill="none" d="M 424.725,266.297 A 22.5,22.5 0 1 1 398.275,266.297"/>
+            <text x="406.5" y="328.5" font-family="Times New Roman" font-size="20">1</text>
+            <polygon id="CtoCArrow" fill="black" stroke-width="1" points="398.275,266.297 389.527,269.83 397.618,275.708"/>
+            <path id="CtoB" stroke="black" stroke-width="1" fill="none" d="M 275.219,213.562 A 79.754,79.754 0 0 1 396.781,213.562"/>
+            <polygon id="CtoBArrow" fill="black" stroke-width="1" points="275.219,213.562 284.209,210.702 276.588,204.228"/>
+            <text x="330.5" y="176.5" font-family="Times New Roman" font-size="20">0</text>
+          </svg>
+        </div>
+      </div>
+
+      <div id="stepstates" style="padding-top: 34px">
+        <h2>Step States</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="alert alert-warning" id="insertWarning">Insert binary code.</div>
+            <div class="alert alert-info" id="stepOutputs">
+              <span id="stepOutput"></span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="alert alert-danger" role="alert" id="wrongInputAlert" style="display: none">
+              <strong>Please!</strong> enter only 1 or 0.
+            </div>
+            <div class="form-inline">
+              <form>
+                <div class="row">
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input" placeholder="W" style="display: block; width: 100%; box-sizing: border-box;">
+                  </div>
+                  <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary btn-block" id="checkButton">Check</button>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </header>
-    <section id="headmenu">
-      <div class="container">
-        <ul>
-          <li><a href="#" id = "anasayfa">Anasayfa</a></li>
-        </ul>
-      </div>
-    </section>
-      <div class="container">
-        <div class="homepage" id = "divHomePage">
-          <p>What is Deterministic Finite Automaton</p>
-          <ul>
-            <li>In DFA, for each input symbol, one can determine the state to which the machine will move. Hence, it is called Deterministic Automaton. As it has a finite number of states, the machine is called Deterministic Finite Machine or Deterministic Finite Automaton.</li>
-          </ul>
-          <p>Formal Definition of a DFA</p>
-          <ul>
-            <li>A DFA can be represented by a 5-tuple (Q, ∑, δ, q0, F) where −</li>
-            <ul>
-              <li>Q is a finite set of states.</li>
-              <li>∑ is a finite set of symbols called the alphabet.</li>
-              <li>δ is the transition function where δ: Q × ∑ → Q</li>
-              <li>q0 is the initial state from where any input is processed (q0 ∈ Q).</li>
-              <li>F is a set of final state/states of Q (F ⊆ Q).</li>
-            </ul>
-          </ul>
-          <p>Example Of DFA</p>
-          <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Present State</th>
-                <th scope="col">Next State for Input 0</th>
-                <th scope="col">Next State for Input 1</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>a</td>
-                <td>a</td>
-                <td>b</td>
-              </tr>
-              <tr>
-                <td>b</td>
-                <td>c</td>
-                <td>a</td>
-              </tr>
-              <tr>
-                <td>c</td>
-                <td>b</td>
-                <td>c</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>Graphical Representation</p>
-          <img src="dfaImage.jpg" class="img-fluid" alt="Responsive image">
-        </div>
     </div>
+
+
     <footer>
-      <div class="container">
+      <div class="container-fluid">
         <div class="copyright">
           &copy; Powered by Sefercan Aydaş - 2018 Sefercan Aydaş All Rights Reserved
         </div>
+        <div class="copyright">
+          <h2 style="margin: 12px 0">Referans:</h2>
+          <span>Deterministic Finite Automaton: <a href="https://www.tutorialspoint.com/automata_theory/deterministic_finite_automaton.htm" target="_blank">https://www.tutorialspoint.com/automata_theory/deterministic_finite_automaton.htm</a> </span>
+        </div>
       </div>
     </footer>
-
-    <div class="container">
-      <div class="reference">
-        <h2 style="margin-top: 0">Referans:</h2>
-        <span>Deterministic Finite Automaton: <a href="https://www.tutorialspoint.com/automata_theory/deterministic_finite_automaton.htm" target="_blank">https://www.tutorialspoint.com/automata_theory/deterministic_finite_automaton.htm</a> </span>
-      </div>
-    </div>
   </body>
 </html>

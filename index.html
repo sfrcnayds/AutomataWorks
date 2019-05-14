@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="theme-color" content="cyan" />
+    <meta name="author" content="Sefercan AYDAS, Istanbul, 2019" />
+    <meta name="description" content="BLM320 FSMV University" />
+    <title>JS Örnekleri </title>
+    <link rel="icon" sizes="192x192" href="sIcon.png">
+    <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('https://sfrcnayds.github.io/AutomataWorks/sw.js')
+        .then((reg) => { console.log('SW Registered', reg.active) })
+        .catch(console.log)
+    }
+  </script>
+  <style>
+    .header {
+      border: 2px solid red;
+      border-radius: 5px;
+      text-align: center;
+      color: white;
+      background: black;
+    }
+    .homeWorks h3{
+      text-align: center;
+
+    }
+    .homeWorks{
+      margin-top: 10px;
+      border: 2px solid red;
+      border-radius: 5px;
+    }
+    hr{
+      border: 1px solid red;
+      margin: 0px;
+    }
+    p  { padding: 0 0 0 20px; }
+    li { padding: 3px; }
+    .head{
+      background: orange;
+      margin: 0px;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="header">
+  <h3>Sefercan AYDAS Automata Home Page</h3>
+</div>
+<div class="homeWorks">
+    <h3 class="head">Project</h3>
+    <hr/>
+    <ul>
+      <li><a href="Project/StudentAutomation.html">Definistic Finite Automata</a> Automata Project</li>
+    </ul>
+</div>
+<div class="homeWorks">
+    <h3 class="head">Ev Ödevleri</h3>
+    <hr/>
+    <ul>
+      <li><a href="RegExpHW.html">RegExp</a> Reguler Expression for String and Array</li>
+      <li><a href="HW2/Expression.html">Expression Parser</a> Expression Parser for power</li>
+      <li><a href="HW3/microJ1.html">microJ1 Parser</a> microJ1 for define and assign variables</li>
+    </ul>
+</div>
+<div class="homeWorks">
+  <h3 class="head">Sınıf içi çalışmalar</h3>
+  <hr/>
+    <ul>
+      <li><a href="DFANFA.html">Second Work</a> NFA and DFA for (1|0)*00</li>
+      <li><a href="RegExp.html">Reguler Expression</a> RegExp Tester.</li>
+      <li><a href="CW5/Expression.html">Expression Parser</a> Classwork 5.</li>
+      <li><a href="PDA1.html">PDA</a> PDA for Addition</li>
+      <li><a href="microJ/microJ3.html">microJ3</a> Classwork 7.</li>
+    </ul>
+</div>
+  </body>
+</html>
